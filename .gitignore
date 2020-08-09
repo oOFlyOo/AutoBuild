@@ -5,3 +5,4 @@ obj/
 *.csproj
 *.sln
 AutoTool/BuildLog.log
+AutoTool/

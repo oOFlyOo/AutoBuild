@@ -10,6 +10,11 @@ Execete_Method="EditorTest.Build"
 Build_Path="${curPath}/Build/AutoBuildBySh"
 
 
-"$Unity_Path" -projectPath $Project_Path -logFile $Log_Path -nographics -quit -batchmode -executeMethod $Execete_Method -buildPath $Build_Path
+"$Unity_Path" -projectPath $Project_Path -logFile $Log_Path -nographics -quit -batchmode -executeMethod $Execete_Method -buildPath $Build_Path &
+sleep 6
 
-cat $Log_Path
+echo "开始读取Log"
+
+# cat $Log_Path
+
+tail --pid=$! -f $Log_Path
